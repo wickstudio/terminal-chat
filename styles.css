@@ -1,0 +1,273 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #000;
+    font-family: "Courier New", monospace;
+    color: #00FF00;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    transition: background-color 0.5s;
+}
+
+/* Terminal styling */
+.terminal {
+    background-color: #1e1e1e;
+    border: 2px solid #00FF00;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 1000px;
+    height: 80vh;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    position: relative;
+    overflow: hidden;
+    transition: background-color 0.5s;
+}
+
+/* Title bar styling */
+.title-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    background-color: #333;
+    padding: 10px;
+    border-radius: 10px 10px 0 0;
+    transition: background-color 0.5s;
+}
+
+/* Buttons on the title bar */
+.buttons {
+    display: flex;
+}
+
+.button {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    margin-right: 10px;
+    background-color: transparent;
+    border: 2px solid #000000;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.2s;
+}
+
+.button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    transition: background-color 0.5s, transform 0.2s;
+    cursor: pointer;
+}
+
+.button.active {
+    transform: scale(0.9);
+    transition: transform 0.2s;
+}
+
+.red {
+    border-color: #FF605C;
+}
+
+.yellow {
+    border-color: #FFD94A;
+}
+
+.green {
+    border-color: #A8FF60;
+}
+
+/* Title styling */
+.title {
+    font-size: 20px;
+    font-weight: bold;
+    color: #00FF00 !important;
+    transition: color 0.5s;
+}
+
+/* Output container styling */
+.output-container {
+    background-color: #000;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    flex-grow: 1;
+    overflow: auto;
+    transition: background-color 0.5s;
+}
+
+/* Command history animation */
+.command-history {
+    color: #888;
+    font-size: 14px;
+    animation: command-scroll 1s infinite linear;
+}
+
+@keyframes command-scroll {
+    0% {
+        transform: translateY(0);
+    }
+    100% {
+        transform: translateY(-100%);
+    }
+}
+
+/* Output text styling */
+.output {
+    white-space: pre-wrap;
+    margin: 0;
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.5s, transform 0.5s;
+    font-size: 16px;
+}
+
+/* Input container styling */
+.input-container {
+    display: flex;
+    align-items: center;
+    background-color: #000;
+    padding: 10px;
+    border-radius: 0 0 10px 10px;
+    transition: background-color 0.5s;
+}
+
+/* Input prompt styling */
+.prompt {
+    color: #00FF00;
+    margin-right: 5px;
+}
+
+/* Input field styling */
+input {
+    background-color: transparent;
+    border: 2px solid #00FF00;
+    border-radius: 5px;
+    outline: none;
+    color: #00FF00;
+    font-size: 16px;
+    padding: 10px;
+    width: 100%;
+    transition: background-color 0.5s;
+}
+
+input:focus {
+    outline: none;
+    box-shadow: none;
+    animation: blink 1s infinite;
+}
+
+@keyframes blink {
+    50% {
+        border-color: transparent;
+    }
+}
+
+/* Add animation for terminal entrance */
+.terminal.animate {
+    background-color: #1e1e1e;
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.6);
+    transition-delay: 0.5s;
+}
+
+.title-bar.animate {
+    background-color: #333;
+}
+
+.title.animate {
+    color: #00FF00;
+}
+
+.output-container.animate {
+    background-color: #000;
+}
+
+.output.animate {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Clear button styling */
+#clear-button {
+    background-color: transparent;
+    border: 2px solid #00FF00;
+    padding: 5px 10px;
+    color: #00FF00;
+    cursor: pointer;
+    font-size: 16px;
+    margin-top: 10px;
+    transition: color 0.5s;
+}
+
+#clear-button:hover {
+    background-color: #00FF00;
+    color: #282c35;
+}
+
+/* Contact buttons on the left */
+.contact-buttons {
+    position: absolute;
+    top: 50%;
+    left: 10px;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 1;
+}
+
+.contact-button {
+    text-decoration: none;
+    color: #00FF00;
+    font-size: 24px;
+    margin-bottom: 20px;
+    background-color: transparent;
+    border: 2px solid #000000;
+    border-radius: 50%;
+    padding: 10px;
+    cursor: pointer;
+    transition: background-color 0.5s, transform 0.2s, color 0.5s;
+}
+
+.contact-button:hover {
+    background-color: rgba(0, 0, 0, 0.2);
+    transform: scale(1.1);
+    color: #FFD94A;
+}
+
+/* Styles for the website, GitHub, and Instagram buttons */
+.website {
+    border-color: #FF605C;
+}
+
+.github {
+    border-color: #FFD94A;
+}
+
+.instagram {
+    border-color: #A8FF60;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    background-color: #333;
+    color: #00FF00;
+    padding: 10px;
+    font-size: 14px;
+    width: 90%;
+    max-width: 1000px;
+    border-radius: 0 0 10px 10px;
+    margin-top: 20px;
+}

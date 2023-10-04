@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wick Terminal Chat</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Contact -->
+    <div class="contact-buttons">
+        <a href="https://wickdev.xyz/" target="_blank" class="contact-button website">
+            <i class="fas fa-globe"></i>
+        </a>
+        <a href="https://github.com/Wickdev077" target="_blank" class="contact-button github">
+            <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.instagram.com/mik__subhi/" target="_blank" class="contact-button instagram">
+            <i class="fab fa-instagram"></i>
+        </a>
+    </div>
+    <!-- Terminal -->
+    <div class="terminal">
+        <div class="title-bar">
+            <div class="buttons">
+                <div class="button red"></div>
+                <div class="button yellow"></div>
+                <div class="button green"></div>
+            </div>
+            <div class="title">Wick Terminal Chat</div>
+        </div>
+        <div class="output-container">
+            <div class="command-history" id="command-history"></div>
+            <pre class="output" id="output"></pre>
+        </div>
+        <div class="input-container">
+            <span class="prompt">$</span>
+            <input type="text" id="input" placeholder="Type here and press Enter">
+            <button id="clear-button">Clear</button>
+        </div>
+    </div>
+    <!-- Footer -->
+    <footer>
+        &copy; 2023 Wick. All Rights Reserved.
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
